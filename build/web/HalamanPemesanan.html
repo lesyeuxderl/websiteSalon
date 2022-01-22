@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Halaman Pemesanan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .tombol{     
+               
+                margin: 0;
+                padding: 0;
+                top: 100px;
+                left: 400px;
+                position: relative;
+                background: url('or.PNG');
+                background-size: cover;
+                height: 300px;
+                width: 290px;
+                border: 3px solid #555;
+                border-radius: 5px;
+                transition-duration: .30s;
+                box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+                font-size: 18px;
+                font-style: bold;
+                color: white;    
+            }  
+
+            .btn1:hover{
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+            }
+            .btn2{
+                background: url('reservasi.PNG');
+                background-size: cover;
+            }
+            .btn2:hover{
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+            }
+        </style>
+
+    </head>
+    <body>
+        <!--Navbar (sit on top)--> 
+        <div class="w3-top">
+            <div class="w3-bar w3-pink w3-padding w3-card" style="letter-spacing:4px;">
+                <a href="HalamanAwal.html" class="w3-bar-item w3-button">Noto Salon</a>
+                <!--Right-sided navbar links. Hide them on small screens--> 
+                <div class="w3-right w3-hide-small">
+                    <a href="#" class="w3-bar-item w3-button">Logout</a>
+                    <a href="#about" class="w3-bar-item w3-button">Sign Up</a>
+                    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <input type="submit" class="tombol btn1" value="Panggil Ke Rumah"/> 
+        <input type="submit" class="tombol btn2" value="Reservasi Tempat"/>
+
+        
+    </body>
+</html>

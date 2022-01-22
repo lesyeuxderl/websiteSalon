@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Halaman Order</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+            .tabel1{
+                border: 2px solid;
+                margin: 30px 90px;  
+            }
+            .tombol{
+                width: 100px;
+                height: 40px;
+                background-color: crimson;
+                color: white;
+                font-size: 20px;
+                font-family: cursive;
+            }
+            .tombol:hover{
+                background-color: grey;
+            }
+            .gambar{
+                width: 100px;
+                border-radius: 50%;
+                position: relative;
+                left: 70px;
+            }  
+            body, html {
+                height: 120%;
+            }
+            /* The hero image */
+            .hero-image {
+                /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("salon.jpg");
+
+                /* Set a specific height */
+                height: 50%;
+
+                /* Position and center the image to scale nicely on all screens */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+
+            /* Place text in the middle of the image */
+            .hero-text {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!--navbar-->
+        <div class="w3-top">
+            <div class="w3-bar w3-pink w3-padding w3-card" style="letter-spacing:4px;">
+                <a href="HalamanAwal.html" class="w3-bar-item w3-button">Noto Salon</a>
+                <!--Right-sided navbar links. Hide them on small screens--> 
+                <div class="w3-right w3-hide-small">
+                    <a href="#" class="w3-bar-item w3-button">Logout</a>
+                    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!--header-->
+
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Order</h1>
+                <p><a href="HalamanAwal.html">Home</a>><a href="HalamanPms.html">Pemesanan</a>>Order</p>   
+            </div>
+        </div>
+
+        <!--content-->
+        <div class="tabel1">
+            <form name="form">
+                <table rules="all" cellpadding="10px">
+                    <tr>
+                        <td colspan="5" bgcolor="#e91e63">Nama : <br>Nomor Hp : <br>Email :</td>      
+                    </tr>
+
+                    <tr>
+                        <td width="25%">Alamat Pemesanan</td>
+                        <th width="25%" bgcolor="pink"></th>
+                        <th width="30%" bgcolor="pink">Layanan yang dipilih</th>
+                        <th width="25%" bgcolor="pink">Harga(IDR)</th>
+                        <th width="10%" bgcolor="pink">Pilih</th>
+                    <tr>
+                        <td rowspan="8"><textarea rows="5" cols="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><img src="reservasi.PNG" class="gambar"></td>
+                        <td><br>Potong Rambut</td>
+                        <td>30.000</td>
+                        <td><input type ="checkbox" name="pilih" value="PotongRambut"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="jasaimg/semir.png" class="gambar"></td>
+                        <td>Semir Rambut</td>
+                        <td>100.000</td>
+                        <td><input type ="checkbox" name="pilih" value="SemirRambut"/></td>
+                    </tr>
+                    <tr>
+                        <td ><img src="jasaimg/makeup.jpg" class="gambar"></td>
+                        <td>Make Up</td>
+                        <td>110.000</td>
+                        <td><input type ="checkbox" name="pilih" value="MakeUp"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="jasaimg/bodym.jpg" class="gambar"></td>
+                        <td>Body Massage 90 Menit</td>
+                        <td>60.000</td>
+                        <td><input type ="checkbox" name="pilih" value="BodyMassage"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="jasaimg/meni.jpg" class="gambar"></td>
+                        <td>Meenicure</td>
+                        <td>200.000</td>
+                        <td><input type ="checkbox" name="pilih" value="M&P"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="jasaimg/pedi.jpg" class="gambar"></td>
+                        <td>Pedicure</td>
+                        <td>200.000</td>
+                        <td><input type ="checkbox" name="pilih" value="M&P"/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="jasaimg/facial.jpg" class="gambar"></td>
+                        <td>Facial</td>
+                        <td>200.000</td>
+                        <td><input type ="checkbox" name="pilih" value="Facial"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">Rp.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" align="right"><input type="submit" onclick="Back()" name="kembali" class="tombol" value="Kembali"/> 
+                            <input type="submit" name="order" class="tombol" value="Order"/> </td>
+                    </tr>
+                </table></form>
+        </div>
+        <script>
+            function Back() {
+                document.form.action = "HalamanPms.html";
+                form.submit();
+            }
+        </script>
+    </body>
+</html>

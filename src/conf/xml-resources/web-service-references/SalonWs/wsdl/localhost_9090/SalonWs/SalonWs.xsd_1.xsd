@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservicesalon/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservicesalon/">
+
+<xs:element name="cekKuota" type="tns:cekKuota"/>
+
+<xs:element name="cekKuotaResponse" type="tns:cekKuotaResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="showJasa" type="tns:showJasa"/>
+
+<xs:element name="showJasaResponse" type="tns:showJasaResponse"/>
+
+<xs:element name="tambahAntrian" type="tns:tambahAntrian"/>
+
+<xs:element name="tambahAntrianResponse" type="tns:tambahAntrianResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showJasa">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showJasaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:jasa" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jasa">
+<xs:sequence>
+<xs:element name="hargaJasa" type="xs:int" minOccurs="0"/>
+<xs:element name="idJasa" type="xs:string" minOccurs="0"/>
+<xs:element name="namaJasa" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tambahAntrian">
+<xs:sequence>
+<xs:element name="idMember" type="xs:string" minOccurs="0"/>
+<xs:element name="idJadwal" type="xs:string" minOccurs="0"/>
+<xs:element name="tanggal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tambahAntrianResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cekKuota">
+<xs:sequence>
+<xs:element name="idjadwal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cekKuotaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

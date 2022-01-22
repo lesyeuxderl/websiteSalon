@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Halaman Data Reservasi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+            .coba{
+                display: inline-block;
+            }
+            .tabel1{
+                border: 2px solid;
+                margin: 125px 20px;             
+            }
+            .tombol{
+                width: 150px;
+                height: 60px;
+                background-color: #e91e63;
+                color: white;
+                font-size: 20px;
+                font-family: cursive;
+                
+            }
+            .tombol:hover{
+                background-color: grey;
+            }
+            .tombol1{
+                width: 100px;
+                height: 40px;
+                background-color: red;
+                border: 3px solid white;
+                color: white;
+                font-size: 20px;
+                font-family: cursive;
+            }
+            .tombol1:hover{
+                background-color: grey;
+            }
+            .tombol2{
+                width: 100px;
+                height: 40px;
+                background-color: blue;
+                border: 3px solid white;
+                color: white;
+                font-size: 20px;
+                font-family: cursive;
+            }
+            .tombol2:hover{
+                background-color: grey;
+            }
+            .gambar{
+                width: 100px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <!--navbar-->
+        <div class="w3-top">
+            <div class="w3-bar w3-pink w3-padding w3-card" style="letter-spacing:4px;">
+                <a href="HalamanAdmin.html" class="w3-bar-item w3-button">Noto Salon</a>
+                <!--Right-sided navbar links. Hide them on small screens--> 
+                <div class="w3-right w3-hide-small">
+                    <a href="#" class="w3-bar-item w3-button">Logout</a>
+                    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                </div>	
+            </div>	
+            <h2><center>Reservasi Antrian Salon</center></h2>
+        </div>
+
+        <!--content-->
+
+        <div class="tabel1">
+
+            <center>
+                <table rules="all" cellpadding="10px">
+                    <tr>
+                        <td colspan="3" bgcolor="#e91e63"> Waktu Pemesanan </td>
+                        <td colspan="3" bgcolor="#e91e63"> Nama Member </td>
+                        <td colspan="3" bgcolor="#e91e63"> Nomor Booking</td>
+                        <td colspan="3" bgcolor="#e91e63"> Jenis Jasa </td>
+                        <td colspan="3" bgcolor="#e91e63"> Catatan </td>
+                        <td colspan="3" bgcolor="#e91e63"> Total Biaya </td>
+                        <td colspan="3" bgcolor="#e91e63"> Atur Booking </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"> 16/11/2019 <br> 09 : 00 </td>
+                        <td colspan="3">Cute Pat Kai</td>
+                        <td colspan="3">B00001</td>
+                        <td colspan="3">Potong Rambut <br> Make Up </td>
+                        <td colspan="3">Di tunggu Kedatangannya!</td>
+                        <td colspan="3">140.000</td>
+                        <td colspan="3">
+                            <input type="submit" class="tombol1" value="Cancel">
+                            <input type="submit" class="tombol2" value="Selesai">
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div class="coba">
+            <form action="HalamanAdmin.html">
+                <input type="submit" align="right" class="tombol" value="Menu Utama"/>
+            </form>
+        </div>
+        <div class="coba">
+            <form action="HalamanRekapan.html">
+                <input type="submit" align="right" class="tombol" value="Lihat Rekapan"/>
+            </form>
+        </div>
+
+    </body>
+</html>

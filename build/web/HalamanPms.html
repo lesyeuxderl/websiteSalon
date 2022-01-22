@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Halaman Pemesanan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .coba{
+                display: inline-block;
+            }
+            .pesan{
+                width: 290px;
+                height: 300px;
+                display: inline-block;
+                margin: 4px;
+                padding: 0;
+                top: 100px;
+                left: 370px;
+                position: relative;
+                box-shadow: 0 30px 50px rgba(0,0,0,0.5);
+            }
+
+            .pesan img{
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                transition: .3s;
+            }
+            .pesan:hover img{
+                filter:blur(2px) brightness(60%);
+                /*box-shadow: 0, 0, 16px, cyan;*/
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+            }
+            .pesan h2{
+                position: absolute;
+                top: 30%;
+                z-index: 1;
+                color:white;
+                text-align:center;
+                width:100%;
+                opacity:0;
+                transition: .3s;
+
+            }
+            .pesan:hover :not(img){
+                opacity:1;              
+            }
+            .pesan input{
+                width: 290px;
+                height: 50px;
+                background-color: #e91e63;
+                color: white;
+                border: 3px solid white;
+                font-family: cursive;
+                font-size: 20px;
+            }
+            .pesan input:hover{
+                background: grey;
+            }
+            .history{
+                margin: 120px 375px;  
+
+            }
+            .history input{
+                width: 590px;
+                height: 40px;
+                background-color: #e91e63;
+                color: white;
+                border: 3px solid white;
+                font-family: cursive;
+                font-size: 20px;
+            }
+            .history input:hover{
+                background: grey;
+            }
+            body, html {
+                height: 100%;
+            }
+            /* The hero image */
+            .hero-image {
+                /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("salon.jpg");
+
+                /* Set a specific height */
+                height: 50%;
+
+                /* Position and center the image to scale nicely on all screens */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+
+            /* Place text in the middle of the image */
+            .hero-text {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+            /*footer*/
+            .footer{
+                background: crimson;
+                color: white;
+                height: 400px;
+                position: relative;
+            }
+            .footer .footer-bot{
+                background: maroon;
+                color: white;
+                height: 50px;
+                text-align: center;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                padding-top: 20px;
+                width: 100%;
+            }
+            .footer .footer-content{
+                border: 1px solid crimson;
+                height: 350px;
+                display: flex;
+                margin: 10px;
+            }
+            .footer .footer-content .footerSection{
+                flex: 1;
+                border: 1px solid crimson;
+            }
+            .fa{
+                flex: 1px;
+                padding: 10px;
+                font-size: 30px;
+                width: 30px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 10px;
+                border-radius: 50%;
+            }
+            .bullet{
+                list-style-type: none;
+                padding: 0;
+            }
+            .text-input {
+                width: 90%;
+                padding: 5px;
+                margin: auto 5px;
+            }
+            .tom{
+                width: 40%;
+                margin-left: 51%;
+            }
+            /*keluar*/
+            .bg-modal{
+                width: 100%;
+                height: 235%;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                /*align-items: center;*/
+                display: none;
+            }
+            .modal-content{
+                top: 70px;
+                width: 400px;
+                height: 200px;
+                background-color: white;
+                opacity: 1;
+                border-radius: 4px;
+                text-align: center;
+                padding: 20px;
+                position: relative;
+            }
+            .btnTidak{
+                width: 20%;
+                position: relative;
+                background-color: crimson;
+                color: white;
+                cursor: pointer;
+            }
+            .btnIya{
+                width: 20%;
+                background-color: green;
+                color: white;
+                cursor: pointer;
+            }
+            .tutup{
+                position: absolute;
+                top: 0;
+                right: 10px;
+                font-size: 35px;
+                transform: rotate(45deg);
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Navbar (sit on top)--> 
+        <div class="w3-top">
+            <div class="w3-bar w3-pink w3-padding w3-card" style="letter-spacing:4px;">
+                <a href="HalamanAwal.html" class="w3-bar-item w3-button">Noto Salon</a>
+                <!--Right-sided navbar links. Hide them on small screens--> 
+                <div class="w3-right w3-hide-small">            
+                    <a href="#" id="log" class="w3-bar-item w3-button">Logout</a>
+                    <a href="#about" class="w3-bar-item w3-button">Sign Up</a>
+                    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <!--logout-->
+
+        <!--header-->
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Pemesanan</h1>
+                <p><a href="HalamanAwal.html">Home</a>>Pemesanan</p>   
+            </div>
+        </div>
+
+
+        <!--content-->
+        <div class="coba">
+            <form action="HalamanOrder.html">
+                <div class="pesan">
+
+                    <img src="or.PNG">
+                    <h2>Layanan pemanggilan jasa salon ke rumah</h2>
+                    <input type="submit" class="tombol" value="Panggil Ke Rumah"/> 
+                </div>
+            </form>
+        </div>
+        <div class="coba">
+            <form action="Halres.jsp">
+                <div class="pesan">
+                    <img src="reservasi.PNG">
+                    <h2>Booking antrian agar tidak mengantri lama</h2>
+                    <input type="submit" class="tombol" value="Reservasi Tempat"/>
+
+                </div>
+            </form>
+        </div>
+        <div class="history">
+            <input type="submit" class="btn" value="Riwayat Pemesanan"/>
+        </div>
+
+
+        <!--footer and contact-->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footerSection Ttg">
+                    <h2>Noto Salon</h2>
+                    <p>Seiring dengan gaya hidup yang modern kami hadir untuk memberikan pelayanan body treatment khusus wanita di kota Yogyakarta. 
+                        Dengan berbagai macam jenis perawatan yang profesional dan terpecaya.</p>
+                    <div class="Kontak">
+                        <i class="fa fa-phone"></i> &nbsp; 0812-345-678
+                        <i class="fa fa-envelope"></i> &nbsp; gmail.com
+                    </div>
+                </div>
+                <div class="footerSection Link">   
+                    <h2>Follow Kami</h2>  
+                    <ul class="bullet">
+                        <li><a href="https://www.facebook.com/" target="_blank"><i  class="fa fa-facebook-official w3-hover-opacity"></i></a>Like Us on Facebook</li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>Follow Us on Instagram</li>              
+                        <li><i class="fa fa-twitter w3-hover-opacity"></i></li>           
+                    </ul>
+                </div>
+                <div class="footerSection Contact">
+                    <h2>Contact Us</h2>
+                    <br>
+                    <form action="index.html" method="post">
+                        <input type="email" name="email" class="text-input" placeholder="Your Email Address..."/>
+                        <textarea name="pesan" class="text-input" placeholder="Your Message..."></textarea>
+                        <input type="submit" name="kirim" value="Kirim" class="tom" />
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bot">
+                &copy;2019 Rekayasa Perangkat Lunak|Design by Kelompok Salon
+            </div>
+        </div>
+
+        <div class="bg-modal">
+            <div class="modal-content">
+                <div class="tutup">+</div>
+                <h3>Anda Yakin Ingin Keluar?</h3>
+                <button onclick="gajadi()" class="btnTidak">No</button>
+                <button class="btnIya">Yes</button>
+            </div>
+        </div>
+        <script>
+            document.getElementById('log').addEventListener('click', function () {
+                document.querySelector('.bg-modal').style.display = 'flex';
+            });
+
+            document.querySelector('.tutup').addEventListener('click', function () {
+                document.querySelector('.bg-modal').style.display = 'none';
+            })
+            function gajadi() {
+                document.querySelector('.bg-modal').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>
